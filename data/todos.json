@@ -1,0 +1,23 @@
+[
+  {
+    "id":0,
+    "title":"Build this Todo List",
+    "description":"This is a huge midterm project, so you better get this right",
+    "dueDate":"03092017",
+    "isCompleted":false
+  },
+  {
+    "id":1,
+    "title":"Let us Edit Todos",
+    "description":"We need to be able to edit",
+    "dueDate":"03102017",
+    "isCompleted":false
+  },
+    {
+    "id":2,
+    "title":"We are Completed",
+    "description":"We need to be sse to edit",
+    "dueDate":"03102017",
+    "isCompleted":true
+  }
+]

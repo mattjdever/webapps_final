@@ -1,0 +1,61 @@
+/* Matthew's Stylesheet */
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+header {
+    background-color: #b29600;
+    text-align: center;
+    
+}
+.check-circle {
+    
+}
+
+.main {
+    background-color: #3266a2;
+    
+}
+
+li.ui-state-default{
+    background:#fff;
+    border:none;
+    border-bottom:1px solid #ddd;
+}
+
+li.ui-state-default:last-child{
+    border-bottom:none;
+}
+li.task-completed {
+    text-decoration: line-through;
+}
+.taskTitle-false {
+    color:darkgoldenrod;
+}
+.taskTitle-true {
+  text-decoration: line-through;
+  color: #000;
+}
+.spacer {
+    margin-left:10px;
+}
+.checkbox {
+    margin:0;
+}
+.add-button {
+    
+}
+
+.delete-button {
+    
+}
+
+.completed-task {
+    
+}
+footer {
+    background-color: #313A40;
+    color: antiquewhite;
+}

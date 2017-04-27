@@ -1,0 +1,20 @@
+<form  name="editRow" ng-submit="saveTask(task)"ng-model-options="{updateOn: 'submit'}">
+       <div class="row">
+        <div class="col-xs-10">
+            <input type="text" data-ng-model="task.title"  class="form-control" required/>
+        </div>
+        <div class="col-xs-2 pull-right">
+            <input type="date" date-format class="form-control" data-ng-model="task.dueDate"  required/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" class="form-control" data-ng-model="task.description"  required/>
+        </div>
+    </div>
+<div class="task-{{task.id}}"></div>
+    <button class="btn-error" ng-click="deleteTask(task)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+<button class="btn-default" type="submit" >Save</button>
+   <button class="btn-error" ng-click="clearTask(editRow)">Clear</button>
+</form>
+    
