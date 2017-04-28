@@ -42,6 +42,7 @@ angular.module('mattTodo').component('tasksList', {
                 title: $scope.todoTitle,
                 description: $scope.todoDescription,
                 dueDate:  $scope.todoDate,
+                category: $scope.todoCategory,
                 isCompleted: false
             });
             $scope.todoTitle = ''; //clear the input after adding

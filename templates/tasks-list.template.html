@@ -2,7 +2,7 @@
   <nav class="buttons row">
      <div class="col-md-12 text-center">
         <a href="" data-ng-click="archive()"
-            class="btn-danger">Delete Completed Tasks</a>
+            class="btn btn-danger">Delete Completed Tasks</a>
     </div>
   </nav>
   <h2>Number of Tasks: {{remaining()}} Not Completed of {{tasks.length}} Tasks</h2>
@@ -35,7 +35,7 @@
         <div class="col-sm-2">
             <input type="text" class="form-control"
             data-ng-model="todoCategory"
-            placeholder="yyyy-MM-dd" required/>
+            placeholder="Enter category" required/>
         </div>
         <div class="col-sm-2 pull-right">
             <input type="date" class="form-control"
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <input class="btn-default" type="submit"
-    value="Add Task" />
+    <button class="btn btn-primary" type="button">
+    Add Task</button>
 </form>
 </div>
