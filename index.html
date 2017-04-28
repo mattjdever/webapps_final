@@ -2,13 +2,64 @@
 <html lang="en" ng-app="mattTodo">
 <head>
     <meta charset="UTF-8">
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Local CSS -->
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+
+          <!-- Local CSS -->
     <link rel="stylesheet" href="css/styles.css">
+      <title>Matthew's ToDo-ly Awesome List</title>
+    <style>
+      body { font-size: 16px;  background-color: #fefefe; color: rgba(0,0,0,0.78); }
+      .panel { margin: 32px 0; }
+      .panel-body { background-color: #feffff; }
+    </style>
+</head>
+<body>
+  <div class="container-fluid">
+       <header class="row">
+         <div class="container-fluid">
+           <div class="row">
+             <!-- TODO: Get Title by variable-->
+             <div class="col-md-12">
+               <h2>Matthew's ToDo-ly Awesome List</h2>
+            </div>
+           </div>
+           <div class="row">
+             <div class="col-md-12 check-circle">
+               <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i>
+             </div>
+           <div class="row">
+           </div>
+         </div>
+       </div>
+     </header>
+
+        <section class="row">
+          <div class="col-md-12">
+            <tasks-list></tasks-list>
+          </div>
+        </section>
+  </div> <!-- close page container -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <h5>&copy;Copyright 2017 by Matthew Dever</h5>
+    </div>
+  </footer>
+
+
     <!-- Import Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.js"></script>
     <script src="https://unpkg.com/angular-ui-router@0.4.2/release/angular-ui-router.js"></script>
+    <!-- Load Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <!-- Load AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
     <script src="https://use.fontawesome.com/c9752d0f61.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
@@ -17,34 +68,6 @@
     <script src="components/tasks.js"></script>
     <script src="components/tasksList.js"></script>
     <script src="components/task.js"></script>
-    <title>Matthew's ToDo-ly Awesome List</title>
-    <style>
-      body { font-size: 16px;  background-color: #fefefe; color: rgba(0,0,0,0.78); }
-      .panel { margin: 32px 0; }
-      .panel-body { background-color: #feffff; }
-    </style>
-</head>
-<body>
-  <div class="container">
-       <header class="row">
-         <div class="row">
-<!-- TODO: Get Title by variable-->
-         <h2>Matthew's ToDo-ly Awesome List</h2> 
-         </div>
-         <div class="row">
-         <div class="md-col-12 check-circle">
-         <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i> 
-         </div>
-         <div class="row">
-       </header> 
-       
-        <section class="row">
-            <tasks-list></tasks-list>
-            
-        </section>
-        <footer class="row">
-            <h5>&copy;Copyright 2017 by Matthew Dever</h5> 
-        </footer>
-    </div>
+
 </body>
 </html>

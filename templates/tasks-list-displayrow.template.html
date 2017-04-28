@@ -1,5 +1,5 @@
 <div class="row align-top">
-  <div class="checkbox col-xs-10">
+  <div class="checkbox col-sm-8">
       <label class="taskTitle-{{task.isCompleted}}">
           <input type="checkbox" ng-model="task.isCompleted" ng-change="updateChecked()" ng-true-value="true"  ng-false-value="false"/>{{task.title}}
           <a href="" ng-click="editTask(task);"><i class="fa fa-pencil spacer" aria-hidden="true"></i></a>
@@ -7,12 +7,15 @@
       </label>
 
   </div>
-  <div class="col-xs-2 text-right">
+  <div class="col-sm-2">
+    <span ng-bind="task.category"></span>
+  </div>
+  <div class="col-sm-2 text-right">
     <span ng-bind="convertToDate(task.dueDate) | date:'MM/dd/yyyy'"></span>
-  </div> 
-</div> 
+  </div>
+</div>
 <div class="row">
-          <div class="col-md-12">
-              <span>{{task.description}}</span>
-          </div>
-      </div> 
+    <div class="col-sm-12">
+        <span>{{task.description}}</span>
+    </div>
+</div>

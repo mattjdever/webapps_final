@@ -1,36 +1,57 @@
-<nav class="buttons row">
-     <div class="col-xs-12 text-center">      
-   <a href="" data-ng-click="archive()" class="btn-danger">Delete Completed Tasks</a>
+<div class="container-fluid">
+  <nav class="buttons row">
+     <div class="col-md-12 text-center">
+        <a href="" data-ng-click="archive()"
+            class="btn-danger">Delete Completed Tasks</a>
     </div>
-</nav>
-<h2>Number of Tasks: {{remaining()}} Not Completed of {{tasks.length}} Tasks</h2>
+  </nav>
+  <h2>Number of Tasks: {{remaining()}} Not Completed of {{tasks.length}} Tasks</h2>
 
 <ul class="list-unstyled">
    <li ng-repeat="task in tasks | filter: { isCompleted: false } track by task.id" class="ui-state-default" ng-include="getTemplate(task)">
 <!--    Display Row-->
-     
+
    </li>
    <li ng-repeat="task in tasks| filter: { isCompleted: true } track by task.id" class="ui-state-default task-completed">
       <div class="checkbox">
-          <label class="taskTitle-{{task.isCompleted}}"><input type="checkbox" ng-model="task.isCompleted" ng-change="updateChecked()" ng-true-value="true"  ng-false-value="false"/>{{task.title}}</label>
+          <label class="taskTitle-{{task.isCompleted}}">
+          <input type="checkbox"
+          ng-model="task.isCompleted"
+          ng-change="updateChecked()"
+          ng-true-value="true"
+          ng-false-value="false"/>
+          {{task.title}}</label>
       </div>
 
    </li>
 </ul>
 <form data-ng-submit="addTodo()" class="todo-form">
     <div class="row">
-        <div class="col-xs-10">
-            <input type="text" data-ng-model="todoTitle" placeholder="Enter new ToDo item" class="form-control" required/>
+        <div class="col-sm-8">
+            <input type="text" data-ng-model="todoTitle"
+            placeholder="Enter new ToDo item"
+            class="form-control" required/>
         </div>
-        <div class="col-xs-2 pull-right">
-            <input type="date" class="form-control" data-ng-model="todoDate" placeholder="yyyy-MM-dd" required/>
+        <div class="col-sm-2">
+            <input type="text" class="form-control"
+            data-ng-model="todoCategory"
+            placeholder="yyyy-MM-dd" required/>
+        </div>
+        <div class="col-sm-2 pull-right">
+            <input type="date" class="form-control"
+            data-ng-model="todoDate"
+            placeholder="yyyy-MM-dd" required/>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
-            <input type="text" class="form-control" data-ng-model="todoDescription" placeholder="Enter Description" required/>
+        <div class="col-sm-12">
+            <input type="text" class="form-control"
+            data-ng-model="todoDescription"
+            placeholder="Enter Description" required/>
         </div>
     </div>
 
-    <input class="btn-default" type="submit" value="Add Task" />
+    <input class="btn-default" type="submit"
+    value="Add Task" />
 </form>
+</div>

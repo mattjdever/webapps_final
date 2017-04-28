@@ -8,15 +8,15 @@
 header {
     background-color: #b29600;
     text-align: center;
-    
+
 }
 .check-circle {
-    
+
 }
 
 .main {
     background-color: #3266a2;
-    
+
 }
 
 li.ui-state-default{
@@ -45,17 +45,26 @@ li.task-completed {
     margin:0;
 }
 .add-button {
-    
+
 }
 
 .delete-button {
-    
+
 }
 
 .completed-task {
-    
+
 }
-footer {
-    background-color: #313A40;
-    color: antiquewhite;
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #313A40;
+  color: antiquewhite;
+  text-align: center;
+
 }
