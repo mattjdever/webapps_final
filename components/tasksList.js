@@ -14,6 +14,7 @@ angular.module('mattTodo').component('tasksList', {
             "category":"default",
             "priority": "3",
             "isCompleted":false
+
           },
           {
             "id":1,

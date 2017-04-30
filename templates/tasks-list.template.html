@@ -20,7 +20,10 @@
           ng-change="updateChecked()"
           ng-true-value="true"
           ng-false-value="false"/>
-          {{task.title}}</label>
+          {{task.title}}
+          &nbsp;
+          <a href="" class="btn-error" ng-click="deleteTask(task)">
+            <i class="fa fa-trash-o" aria-hidden="true"></i></a></label>
       </div>
 
    </li>
@@ -37,7 +40,7 @@
         <div class="col-sm-3">
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-danger active">
-              <input ng-check="" id="priority-high" type="radio"
+              <input  id="priority-high" type="radio"
                autocomplete="off"> High
             </label>
             <label class="btn btn-warning">
@@ -68,7 +71,8 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <button class="btn btn-primary btn-block" type="button">
+            <button class="btn btn-primary btn-block"
+            type="submit">
             Add Task</button>
         </div>
     </div>
