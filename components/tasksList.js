@@ -12,6 +12,7 @@ angular.module('mattTodo').component('tasksList', {
             "description":"This is a hugely midterm project, so you better get this right",
             "dueDate":"2017-03-10T05:00:00.000Z",
             "category":"default",
+            "priority": "3",
             "isCompleted":false
           },
           {
@@ -20,6 +21,7 @@ angular.module('mattTodo').component('tasksList', {
             "description":"We need to be able to edit these things",
             "dueDate":"2017-03-09T05:00:00.000Z",
             "category":"testing",
+            "priority": "3",
             "isCompleted":false
           }];
 

@@ -25,12 +25,28 @@
 
    </li>
 </ul>
-<form data-ng-submit="addTodo()" class="todo-form">
+<form data-ng-submit="addTodo()" class="todo-form card">
+<div class="card">
+  <div class="card-block">
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-5">
             <input type="text" data-ng-model="todoTitle"
             placeholder="Enter new ToDo item"
             class="form-control" required/>
+        </div>
+        <div class="col-sm-3">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-danger active">
+              <input ng-check="" id="priority-high" type="radio"
+               autocomplete="off"> High
+            </label>
+            <label class="btn btn-warning">
+              <input type="radio" id="priority-med" autocomplete="off"> Medium
+            </label>
+            <label class="btn btn-success">
+              <input checked id="priority-low" type="radio" autocomplete="off"> Low
+            </label>
+          </div>
         </div>
         <div class="col-sm-2">
             <input type="text" class="form-control"
@@ -50,8 +66,14 @@
             placeholder="Enter Description" required/>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button class="btn btn-primary btn-block" type="button">
+            Add Task</button>
+        </div>
+    </div>
+</div></div>
 
-    <button class="btn btn-primary" type="button">
-    Add Task</button>
+
 </form>
 </div>

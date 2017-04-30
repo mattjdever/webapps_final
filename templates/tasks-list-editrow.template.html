@@ -1,7 +1,21 @@
 <form  name="editRow" ng-submit="saveTask(task)"ng-model-options="{updateOn: 'submit'}">
        <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-5">
             <input type="text" data-ng-model="task.title"  class="form-control" required/>
+        </div>
+        <div class="col-md-3">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-danger active">
+              <input type="checkbox"
+               autocomplete="off"> High
+            </label>
+            <label class="btn btn-warning">
+              <input type="checkbox" autocomplete="off"> Medium
+            </label>
+            <label class="btn btn-primary">
+              <input checked type="checkbox" autocomplete="off"> Low
+            </label>
+          </div>
         </div>
         <div class="col-md-2 pull-right">
             <input type="text"  class="form-control" data-ng-model="task.category"  required/>
