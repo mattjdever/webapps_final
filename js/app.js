@@ -34,7 +34,7 @@ angular
     title: 'Matthew\'s ToDo-ly Awesome List',
     description: 'A simple todo list example with firebase.',
     author: 'Matthew Dever',
-    version: '1.3.0'
+    version: '1.4.1'
   })
 .run(
   function($rootScope, metaData, firebaseConfig) {
@@ -81,3 +81,5 @@ angular
 function DbRefRoot() {
   return firebase.database().ref("tasks")
 }
+
+$().button('toggle')

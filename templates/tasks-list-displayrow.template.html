@@ -1,6 +1,6 @@
-<div class="container-fluid">
+
 <div class="row align-top">
-  <div class="checkbox col-sm-6">
+  <div class="checkbox-inline col-12 col-md-6">
       <label class="taskTitle-{{task.isCompleted}}">
           <input type="checkbox"
           class="form-check-input"
@@ -8,30 +8,32 @@
           ng-change="tasks.$save(task)"
           ng-true-value="true"
           ng-false-value="false">{{task.title}}
+          &nbsp;&nbsp;
           <a href="" ng-click="editTask(task);"><i class="fa fa-pencil spacer" aria-hidden="true"></i></a>
+          &nbsp;&nbsp;
           <a href="" class="btn-error" ng-click="deleteTask(task)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-          <a href="" class="btn-error" ng-click="commentTask(task)"><i class="fa fa-commenting-o" aria-hidden="true"></i></a>
+          <!-- &nbsp;&nbsp;
+          <a href="" class="btn-error" ng-click="commentTask(task)"><i class="fa fa-commenting-o" aria-hidden="true"></i></a> -->
       </label>
 
   </div>
 
-  <div class="col-sm-2">
+  <div class="col-3 col-md-2">
     <span ng-bind="task.category"></span>
   </div>
-  <div class="col-sm-2">
+  <div class="col-3 col-md-2">
     <div ng-model="task.priority" ng-switch="task.priority">
       <span class="text-danger" ng-switch-when="1"><i class="fa fa-flag" aria-hidden="true"></i> High</span>
       <span class="text-warning" ng-switch-when="2"><i class="fa fa-flag" aria-hidden="true"></i> Medium</span>
       <span class="text-success" ng-switch-when="3"><i class="fa fa-flag" aria-hidden="true"></i> Low</span>
     </div>
   </div>
-  <div class="col-sm-2 text-right">
+  <div class="col-3 col-md-2 text-right">
     <span ng-bind="convertToDate(task.dueDate) | date:'MM/dd/yyyy'"></span>
   </div>
 </div>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-12">
         <span>{{task.description}}</span>
     </div>
-</div>
 </div>

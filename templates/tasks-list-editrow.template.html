@@ -1,48 +1,71 @@
 <form  name="editRow" ng-submit="saveTask(task)"ng-model-options="{updateOn: 'submit'}">
        <div class="row">
-        <div class="col-md-5">
-            <input type="text" data-ng-model="task.title"  class="form-control" required/>
-        </div>
-        <div class="col-md-3">
-          <div class="btn-group" data-toggle="buttons-radio">
-            <label class="btn btn-danger active">
-              <input type="radio" data-ng-model="task.priority"
-               ng-value="1" autocomplete="off"> High
-            </label>
-            <label class="btn btn-warning">
-              <input type="radio" data-ng-model="task.priority"
-              ng-value="2" autocomplete="off"> Medium
-            </label>
-            <label class="btn btn-success">
-              <input type="radio" data-ng-model="task.priority"
-              ng-value="3" autocomplete="off"> Low
-            </label>
+         <div class="col-12  col-lg-6  row">
+           <label class="col-3 col-form-label" for="title">Task:</label>
+           <div class="col-9">
+            <input id="title" type="text" data-ng-model="task.title"  class="form-control" required/>
           </div>
         </div>
-        <div class="col-md-2 pull-right">
-            <input type="text"  class="form-control" data-ng-model="task.category"  required/>
+        <div class="col-12 col-lg-6 row">
+          <label class="col-3 col-form-label" for="category">Category:</label>
+          <div class="col-9">
+            <input id="category" type="text"  class="form-control" data-ng-model="task.category"  required/>
+          </div>
         </div>
-        <div class="col-md-2 pull-right">
-            <input type="date" date-format
+      </div>
+        <div class="row form-group">
+            <div class="col-12 col-lg-6 row">
+              <div class="col-3 col-form-label"> Priority:</div>
+              <div class="btn-group col-7" data-toggle="buttons-radio">
+                <label class="btn btn-danger active">
+                <input type="radio" data-ng-model="task.priority"
+               ng-value="1" autocomplete="off"> High
+                </label>
+                <label class="btn btn-warning">
+                  <input type="radio" data-ng-model="task.priority"
+                  ng-value="2" autocomplete="off"> Medium
+                </label>
+                <label class="btn btn-success">
+                  <input type="radio" data-ng-model="task.priority"
+                  ng-value="3" autocomplete="off"> Low
+                </label>
+              </div>
+              <!-- <div class="col-2 ">
+                <div  ng-switch="task.priority">
+                  <span class="text-danger" ng-switch-when="1"><i class="fa fa-flag" aria-hidden="true"></i> High</span>
+                  <span class="text-warning" ng-switch-when="2"><i class="fa fa-flag" aria-hidden="true"></i> Medium</span>
+                  <span class="text-success" ng-switch-when="3"><i class="fa fa-flag" aria-hidden="true"></i> Low</span>
+                </div>
+              </div> -->
+        </div>
+
+
+      <div class="col-12 col-lg-6 row">
+          <label class="col-3 col-form-label" for="dueDate">Due Date:</label>
+          <div class="col-9">
+            <input id="dueDate" type="date" date-format
             class="form-control" data-ng-model="task.dueDate"
             required/>
         </div>
+      </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
-            <input type="text" class="form-control" data-ng-model="task.description"  required/>
+        <div class="col-12">
+          <label class="col-form-label" for="todoDescription">Description:</label>
+
+            <input id="todoDescription" type="text" class="form-control" data-ng-model="task.description"  required/>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
-          <div class="form-group row">
-            <label for="comments" class="col-2 col-form-label">Comments:</label>
-            <div class="col-10"><input id="comments" type="text" class="form-control" data-ng-model="task.comments"  required/></div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="comments" class="ccol-form-label">Comments:</label>
+            <input id="comments" type="text" class="form-control" data-ng-model="task.comments"  />
           </div>
         </div>
     </div>
 <div class="task-{{task.id}}"></div>
-    <button class="btn-error" ng-click="deleteTask(task)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-<button class="btn-default" type="submit" >Save</button>
-   <button class="btn-error" ng-click="clearTask(editRow)">Clear</button>
+    <button class="btn btn-danger" ng-click="deleteTask(task)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+<button class="btn btn-primary" type="submit" >Save</button>
+   <button class="btn btn-danger" ng-click="clearTask(editRow)">Clear</button>
 </form>

@@ -14,7 +14,7 @@
   <li class="list-header bg-primary">
     <div class="container-fluid">
       <div class="row align-top">
-        <div class="col-sm-6">
+        <div class="col-3 col-md-6">
           <a class="list-header" href="#"
           ng-click="sortType = 'title';
             sortReverse = !sortReverse ">Task Title
@@ -22,21 +22,21 @@
             <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span></a>
         </div>
 
-        <div class="col-sm-2">
+        <div class="col-3 col-md-2">
           <a class="list-header" href="#"
           ng-click="sortType = 'category';
             sortReverse = !sortReverse ">Category
             <span ng-show="sortType == 'category' && !sortReverse" class="fa fa-caret-down"></span>
             <span ng-show="sortType == 'category' && sortReverse" class="fa fa-caret-up"></span></a>
         </div>
-        <div class="col-sm-2">
+        <div class="col-3 col-md-2">
           <a class="list-header" href="#"
           ng-click="sortType = 'priority';
             sortReverse = !sortReverse ">Priority
             <span ng-show="sortType == 'priority' && !sortReverse" class="fa fa-caret-down"></span>
             <span ng-show="sortType == 'priority' && sortReverse" class="fa fa-caret-up"></span></a>
         </div>
-        <div class="col-sm-2 text-right">
+        <div class="col-3 col-md-2 text-right">
           <a class="list-header" href="#"
           ng-click="sortType = 'dueDate';
             sortReverse = !sortReverse ">Due Date
@@ -75,17 +75,34 @@
 </ul>
 </div>
 </div>
+
+
 <form data-ng-submit="addTodo()" class="todo-form card">
 <div class="card">
   <div class="card-block">
     <div class="row">
-        <div class="col-sm-5">
-            <input type="text" data-ng-model="todoTitle"
+        <div class="col-12  col-lg-6  row">
+          <label class="col-3 col-form-label" for="todoTitle">Task:</label>
+          <div class="col-9">
+              <input id="todoTitle" type="text" data-ng-model="todoTitle"
             placeholder="Enter new ToDo item"
             class="form-control" required/>
+          </div>
         </div>
-        <div class="col-sm-3">
-          <div class="btn-group" data-toggle="buttons-radio">
+        <div class="col-12 col-lg-6 row">
+          <label class="col-3 col-form-label" for="todoCategory">Category:</label>
+          <div class="col-9">
+            <input id="todoCategory" type="text" class="form-control"
+            data-ng-model="todoCategory"
+            placeholder="Enter category" required/>
+          </div>
+        </div>
+
+    </div>
+    <div class="row form-group">
+        <div class="col-12 col-lg-6 row">
+          <div class="col-3 col-form-label"> Priority:</div>
+          <div class="btn-group col-7" data-toggle="buttons-radio">
             <label class="btn btn-danger ">
               <input type="radio" name="todoPriority"
               ng-model="todoPriority" value="1" ng-value="1">
@@ -102,21 +119,28 @@
                Low
             </label>
           </div>
+          <!-- <div class="col-2 ">
+            <div  ng-switch="todoPriority">
+              <span class="text-danger" ng-switch-when="1"><i class="fa fa-flag" aria-hidden="true"></i> High</span>
+              <span class="text-warning" ng-switch-when="2"><i class="fa fa-flag" aria-hidden="true"></i> Medium</span>
+              <span class="text-success" ng-switch-when="3"><i class="fa fa-flag" aria-hidden="true"></i> Low</span>
+            </div>
+          </div> -->
         </div>
-        <div class="col-sm-2">
-            <input type="text" class="form-control"
-            data-ng-model="todoCategory"
-            placeholder="Enter category" required/>
-        </div>
-        <div class="col-sm-2 pull-right">
-            <input type="date" date-format class="form-control"
-            data-ng-model="todoDate"
-            placeholder="yyyy-MM-dd" required/>
+        <div class="col-12 col-lg-6 row">
+            <label class="col-3 col-form-label" for="dueDate">Due Date:</label>
+            <div class="col-9">
+              <input id="dueDate" type="date" date-format class="form-control"
+              data-ng-model="todoDate"
+              placeholder="yyyy-MM-dd" required/>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <input type="text" class="form-control"
+          <label class="col-form-label" for="todoDescription">Description:</label>
+
+            <input id="todoDescription" type="text" class="form-control"
             data-ng-model="todoDescription"
             placeholder="Enter Description" required/>
         </div>
