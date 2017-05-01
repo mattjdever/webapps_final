@@ -1,0 +1,166 @@
+body {
+  background-color: #efefef;
+  color: rgba(0,0,0,0.87);
+}
+.btn-link { color: #009688; }
+.btn-link:hover,
+.btn-link:focus { color: #004D40; }
+.btn-outline-primary {
+  color: #009688;
+  border-color: #009688;
+}
+.btn-outline-primary:active,
+.btn-outline-primary:hover {
+  color: #ffffff;
+  border-color: #009688;
+  background-color: #009688;
+}
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled {
+    color: #009688;
+    opacity: 0.8;
+    background-color: transparent;
+}
+
+.app { width: 100%; }
+.header, .todo-form {
+  padding: 2rem;
+}
+.header {
+  background-color: #009688;
+  color: rgba(255,255,255,1);
+  padding-bottom: 3.5rem;
+  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+}
+.header .medallion {
+  font-size: 3rem;
+  padding: 1rem;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: -2rem;
+  position: absolute;
+  top: 7rem;
+  left: 0;
+  right: 0;
+  border: 0.125rem solid #009688;
+  border-radius: 3rem;
+  background-color: rgba(255,255,255,1);
+  color: #009688;
+}
+
+/* ---- New Todo Form ---- */
+.todo-form, .todo-list { background-color: #fefefe; }
+.todo-form {
+  padding-top: 4.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background-color: #E0F2F1;
+}
+.todo-form .input-group-addon {
+  background-color: #009688;
+  border-color: #80CBC4;
+  color: rgba(255,255,255,0.7);
+}
+.todo-form .form-control {
+  border-color: #80CBC4;
+  background-color: rgba(255,255,255,0.65);
+}
+.todo-form .form-control:focus {
+  border-color: #009688;
+}
+.todo-form .form-control::-webkit-input-placeholder{
+  color: rgba(0,0,0,0.23);
+}
+
+/* ---- Todo List ---- */
+.todo-list {
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+/* ---- Todo List Item ---- */
+todo-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+todo-list-item:last-of-type { border: none; }
+
+todo-list-item.completed {
+  background-color: rgba(0,0,0,0.03);
+  color: rgba(0,0,0,0.54);
+}
+todo-list-item.completed .btn { opacity: 0.54; }
+todo-list-item .description { flex: 1; line-height: 1.25; padding: 0.3rem 0;}
+todo-list-item .due-date { font-size: 0.875rem; color: rgba(0,0,0,0,.54); margin-top: 0.25rem; }
+todo-list-item .action-buttons { margin-left: 1rem; }
+todo-list-item .action-buttons button.btn-link { color: rgba(0,0,0,0.23); }
+
+todo-list-item button.done {
+  width: 100%;
+  margin-top: 1rem;
+  margin-left: 0;
+}
+
+/* ---- AngularJs-Datepicker ---- */
+._720kb-datepicker-calendar-header:nth-child(odd) {
+  background: #009688;
+}
+._720kb-datepicker-calendar-header:nth-child(even) {
+  background: #80CBC4;
+}
+._720kb-datepicker-calendar-days-header {
+  background: rgba(0,0,0,0.03);
+}
+
+/* ---- Animations ---- */
+todo-list-item.ng-move,
+todo-list-item.ng-enter,
+todo-list-item.ng-leave,
+.animate-switch.ng-move,
+.animate-switch.ng-enter,
+.animate-switch.ng-leave {
+  transition:all linear 0.3s;
+}
+todo-list-item.ng-leave.ng-leave-active,
+.animate-switch.ng-leave.ng-leave-active,
+todo-list-item.ng-move,
+todo-list-item.ng-enter,
+.animate-switch.ng-enter {
+  opacity: 0;
+  max-height: 0;
+}
+.animate-switch.ng-leave,
+todo-list-item.ng-leave,
+todo-list-item.ng-move.ng-move-active,
+todo-list-item.ng-enter.ng-enter-active,
+.animate-switch.ng-move.ng-move-active,
+.animate-switch.ng-enter.ng-enter-active {
+  opacity: 1;
+  max-height: 8.5rem;
+}
+
+/* ---- Media Queries ---- */
+@media (min-width: 576px) {
+  .app {
+    width: 550px;
+    margin: 1rem auto;
+    padding: 0;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 0.25rem;
+    box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.23);
+  }
+  .header .medallion { margin-top: -1rem; }
+
+  todo-list-item button.done {
+    width: auto;
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}

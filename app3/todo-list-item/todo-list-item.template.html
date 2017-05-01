@@ -1,0 +1,43 @@
+<div>
+  <button class="btn btn-link" ng-click="$ctrl.todos.toggleComplete($ctrl.todo)">
+    <span
+      class="fa fa-lg"
+      ng-class="$ctrl.todo.isComplete ? 'fa-check-square-o': 'fa-square-o'"></span>
+  </button>
+</div>
+<div class="description"
+     style="display:flex; flex-flow: column;"
+     ng-switch="$ctrl.isEditing">
+  <div class="form-group d-flex justify-content-between animate-switch" ng-switch-when="true">
+    <textarea class="form-control" style="flex:1;" ng-model="$ctrl.todo.description"></textarea>
+  </div>
+  <div class="form-group d-flex flex-wrap justify-content-between animate-switch"
+       ng-switch-when="true">
+    <datepicker style="flex:1;" date-format="yyyy-MM-dd" selector="form-control">
+      <div class="input-group">
+        <input
+          type="text" class="form-control"
+          placeholder="YYYY-MM-DD"
+          autocomplete="off"
+          ng-model="$ctrl.todo.dueDate">
+        <div class="input-group-addon" style="border-left: none;">
+          <span class="fa fa-calendar"></span>
+        </div>
+      </div>
+    </datepicker>
+    <button class="btn btn-sm btn-outline-primary done" ng-click="$ctrl.updateTodo()">Done</button>
+  </div>
+  <div class="animate-switch" ng-switch-default ng-click="$ctrl.toggleEditing()">
+    {{$ctrl.todo.description}}
+  </div>
+  <div
+    class="due-date text-muted animate-switch"
+    ng-switch-default ng-click="$ctrl.toggleEditing()">
+    Due on: {{$ctrl.todo.dueDate}}
+  </div>
+</div>
+<div class="action-buttons">
+  <button class="btn btn-link" ng-click="$ctrl.todos.remove($ctrl.todo.id)">
+    <span class="fa fa-trash"></span>
+  </button>
+</div>

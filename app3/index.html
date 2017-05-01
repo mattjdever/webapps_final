@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-CA" ng-app="midterm">
+  <head>
+    <!-- <base href="/"> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="{{metaData.author}}">
+    <meta name="description" content="{{metaData.description}}">
+    <title>{{metaData.title}} | {{metaData.courseNumber}}-{{metaData.courseSection}}</title>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Latest compiled and minified AngularJs-Datepicker CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.13/angular-datepicker.min.css">
+    <!-- Latest compiled and minified FontAwesome CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Our custom CSS -->
+    <link href="app.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="app">
+      <div class="header">
+        <h2 style="text-align: center;">Angular To-do</h1>
+        <div class="medallion">
+          <span class="fa fa-calendar-check-o"></span>
+        </div>
+      </div>
+      <!-- add new todos -->
+      <new-todo-form></new-todo-form>
+      <!-- todo list items -->
+      <section class="todo-list" ng-controller="TodoListCtrl">
+        <todo-list-item
+          ng-repeat="todo in todos.list | filter:{isComplete:false} | orderBy:'dueDate' track by todo.id"
+          todo="todo">
+        </todo-list-item>
+        <todo-list-item
+          class="completed"
+          ng-repeat="todo in todos.list | filter:{isComplete:true} | orderBy:'dueDate' track by todo.id"
+          todo="todo">
+        </todo-list-item>
+      </section>
+    </div>
+
+    <!-- Import Angular components -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <!-- Import helper functions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.13/angular-datepicker.min.js"></script>
+    <!-- Import our app-->
+    <!-- In a productin app these would be combined into a single file and minified  -->
+    <script src="app.module.js"></script>
+    <script src="todo-service.js"></script>
+    <script src="todo-list-item/todo-list-item.module.js"></script>
+    <script src="todo-list-item/todo-list-item.component.js"></script>
+    <script src="new-todo-form/new-todo-form.module.js"></script>
+    <script src="new-todo-form/new-todo-form.component.js"></script>
+  </body>
+</html>

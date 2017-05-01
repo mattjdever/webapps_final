@@ -1,23 +1,21 @@
 [
   {
     "id":0,
-    "title":"Build this Todo List",
-    "description":"This is a huge midterm project, so you better get this right",
-    "dueDate":"03092017",
+    "title":"Version 1.2",
+    "description":"This is a the end of term final project, so you better get this right",
+    "dueDate":"2017-03-10T05:00:00.000Z",
+    "category":"default",
+    "priority": "3",
     "isCompleted":false
+
   },
   {
     "id":1,
-    "title":"Let us Edit Todos",
-    "description":"We need to be able to edit",
-    "dueDate":"03102017",
+    "title":"Wowsers this is curvy",
+    "description":"good zingers need to be able to edit these things",
+    "dueDate":"2017-03-09T05:00:00.000Z",
+    "category":"testing",
+    "priority": "3",
     "isCompleted":false
-  },
-    {
-    "id":2,
-    "title":"We are Completed",
-    "description":"We need to be sse to edit",
-    "dueDate":"03102017",
-    "isCompleted":true
   }
 ]

@@ -1,0 +1,8 @@
+<form  name="editRow" ng-submit="saveTask(task)"ng-model-options="{updateOn: 'submit'}">
+
+
+<div class="task-{{task.id}}"></div>
+    <button class="btn-error" ng-click="deleteTask(task)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+<button class="btn-default" type="submit" >Save</button>
+   <button class="btn-error" ng-click="clearTask(editRow)">Clear</button>
+</form>

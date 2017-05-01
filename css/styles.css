@@ -3,8 +3,14 @@
 * {
     font-family: 'Oswald', sans-serif;
 }
-
-
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
 header {
     background-color: #b29600;
     text-align: center;
@@ -18,13 +24,21 @@ header {
     background-color: #3266a2;
 
 }
-
+li.list-header{
+  /*background-color: darkblue;
+  color:white;*/
+}
+a.list-header:visited, a.list-header:active {
+  color: white;
+}
 li.ui-state-default{
     background:#fff;
     border:none;
     border-bottom:1px solid #ddd;
 }
-
+li.ui-state-default:nth-child(odd) {
+  background: lightblue;
+}
 li.ui-state-default:last-child{
     border-bottom:none;
 }
@@ -35,7 +49,7 @@ li.task-completed {
     color:darkgoldenrod;
 }
 .taskTitle-true {
-  text-decoration: line-through;
+  /*text-decoration: line-through;*/
   color: #000;
 }
 .spacer {

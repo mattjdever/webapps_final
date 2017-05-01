@@ -4,16 +4,18 @@
             <input type="text" data-ng-model="task.title"  class="form-control" required/>
         </div>
         <div class="col-md-3">
-          <div class="btn-group" data-toggle="buttons">
+          <div class="btn-group" data-toggle="buttons-radio">
             <label class="btn btn-danger active">
-              <input type="checkbox"
-               autocomplete="off"> High
+              <input type="radio" data-ng-model="task.priority"
+               ng-value="1" autocomplete="off"> High
             </label>
             <label class="btn btn-warning">
-              <input type="checkbox" autocomplete="off"> Medium
+              <input type="radio" data-ng-model="task.priority"
+              ng-value="2" autocomplete="off"> Medium
             </label>
-            <label class="btn btn-primary">
-              <input checked type="checkbox" autocomplete="off"> Low
+            <label class="btn btn-success">
+              <input type="radio" data-ng-model="task.priority"
+              ng-value="3" autocomplete="off"> Low
             </label>
           </div>
         </div>
@@ -21,12 +23,22 @@
             <input type="text"  class="form-control" data-ng-model="task.category"  required/>
         </div>
         <div class="col-md-2 pull-right">
-            <input type="date" date-format class="form-control" data-ng-model="task.dueDate"  required/>
+            <input type="date" date-format
+            class="form-control" data-ng-model="task.dueDate"
+            required/>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <input type="text" class="form-control" data-ng-model="task.description"  required/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+          <div class="form-group row">
+            <label for="comments" class="col-2 col-form-label">Comments:</label>
+            <div class="col-10"><input id="comments" type="text" class="form-control" data-ng-model="task.comments"  required/></div>
+          </div>
         </div>
     </div>
 <div class="task-{{task.id}}"></div>

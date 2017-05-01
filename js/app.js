@@ -1,7 +1,7 @@
-/* Matthew's MidTerm Assignment for Web Applications - Winter 2017
+/* Matthew's Final Assignment for Web Applications - Winter 2017
 *
 Requirements:
-- the app will list all todo items 
+- the app will list all todo items
 X- completed items should be grouped at the bottom of the list and styled in a way that indicates their state
 - a user should see the description and due date for each item
 - each todo will have the following properties:
@@ -9,18 +9,43 @@ X- completed items should be grouped at the bottom of the list and styled in a w
 - due date
 - completed flag
 - user can create, delete & edit items
-X- Use Bootstrap for the UI 
+X- Use Bootstrap for the UI
 - Local Storage is to be used to persist items from session to session ( including edits )
 * ToDO: Look into CUID
 *************/
-var app = angular.module('mattTodo', ['ui.router'] );
+angular
+
+.module('mattTodo', ['ui.router', 'firebase', 'angularModalService'] )
 //app.$scope.appName = 'Matthew\'s ToDo-ly Awesome List';
 //app.constant('appData',{
 //    name:  'Matthew\'s ToDo-ly Awesome List'
 //    });
 //app.value()
+.constant('firebaseConfig', {
+  // Initialize Firebase
+    apiKey: "AIzaSyCJiP64HbAp2T8oP3CFGljkZ4KV05jfmr4",
+    authDomain: "mtm6430-final-e9b42.firebaseapp.com",
+    databaseURL: "https://mtm6430-final-e9b42.firebaseio.com",
+    projectId: "mtm6430-final-e9b42",
+    storageBucket: "mtm6430-final-e9b42.appspot.com",
+    messagingSenderId: "780922194242"
+  })
+.constant('metaData', {
+    title: 'Matthew\'s ToDo-ly Awesome List',
+    description: 'A simple todo list example with firebase.',
+    author: 'Matthew Dever',
+    version: '1.3.0'
+  })
+.run(
+  function($rootScope, metaData, firebaseConfig) {
+     $rootScope.metaData = metaData
+     firebase.initializeApp(firebaseConfig)
+   }
 
-app.config(
+)
+
+.service('dbRefRoot', DbRefRoot)
+.config(
    function($stateProvider, $urlRouterProvider){
        $urlRouterProvider.otherwise('/tasks');
      var states = [
@@ -28,24 +53,15 @@ app.config(
            name: 'tasks',
            url: '/tasks',
            component: 'tasks'
-//           ,
-//           resolve: {
-//                tasks: function(TodoService) {
-//                    return TodoService.getTasks();
-//                }
-//            }
-           
        }
-
-       
      ]
      // Loop over the state definitions and register them
       states.forEach(function(state) {
         $stateProvider.state(state);
       });
    }
-);
-app.directive('dateFormat', function() {
+)
+.directive('dateFormat', function() {
       return {
         require: 'ngModel',
         link: function(scope, element, attr, ngModelCtrl) {
@@ -55,5 +71,13 @@ app.directive('dateFormat', function() {
           ngModelCtrl.$parsers.length = 0;
         }
       };
-});
+})
+// .controller('ModalController', function($scope, close) {
+//
+//   // when you need to close the modal, call close
+//   close("Success!");
+// });
 
+function DbRefRoot() {
+  return firebase.database().ref("tasks")
+}
